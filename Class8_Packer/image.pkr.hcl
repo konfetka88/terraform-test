@@ -33,7 +33,15 @@ packer {
   }
 
   variable "ami_regions" {
-      default = ["us-east-1", "ca-central-1", "eu-west-1"]
+      default = [
+                 "us-east-1",
+                 "ca-central-1",
+                 "eu-west-1"
+                 ]
+  }
+
+  variable "account_ids" {
+      default = ["986127918014"] # Oblachko
   }
   
 source "amazon-ebs" "image" {
@@ -44,6 +52,7 @@ source "amazon-ebs" "image" {
     ssh_username         = "${var.ssh_username}"
     region               = "${var.region}"
     ami_regions          = "${var.ami_regions}"
+    ami_users            = "${var.account_ids}
     source_ami_filter {
         most_recent = true
         owners      = ["${var.owners}"]
