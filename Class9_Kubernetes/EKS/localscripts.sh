@@ -13,3 +13,8 @@ sudo yum install awscli -y
 
 # Run this command
 # Run in terminal "bash localscripts.sh"
+
+wget https://releases.hashicorp.com/terraform/0.14.11/terraform_0.14.11_linux_amd64.zip
+unzip terraform_0.14.11_linux_amd64.zip
+chmod +x terraform 
+sudo mv terraform /bin/
