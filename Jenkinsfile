@@ -5,11 +5,11 @@ pipeline {
       steps {
         sh 'echo "Hello Jenkins PRO"'
       }
-      stage('Clone') {
+    }
+    stage('Second Step test') {
       steps {
-        sh 'echo "Second step TEST DEVOPSenok"'
+        sh 'echo "Second step TEST"'
       }
     }
-
   }
 }
