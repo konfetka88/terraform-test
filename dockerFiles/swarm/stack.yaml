@@ -1,0 +1,16 @@
+version: "3.3"
+services: 
+  wordpress:
+    image: wordpress:php7.3
+    deploy:
+      replicas: 3
+      resources:
+        reservations:
+          cpus: '0.5'
+      # placement:
+      #   constraints: 
+      #     - "node.labels.zone != 1"
+      #   preferences:
+      #     - spread: node.labels.zone
+    ports:
+      - "80:80"

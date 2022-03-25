@@ -1,4 +1,3 @@
-# Pulls centos 7 image
 FROM centos:7
 
 # Install telnet
@@ -18,11 +17,3 @@ ENV WORDPRESS_DB="wordpress"        \
 LABEL centos="wordpress"    \
       created_by="engineers"
 
-COPY index.html /var/www/html/
-RUN chmod -R 775 /var/www/html
-
-# Expose container port
-EXPOSE 80
-
-# Start web server in container
-CMD ["/usr/sbin/httpd","-D","FOREGROUND"]   # Special directory, use this httpd and run on the background 
